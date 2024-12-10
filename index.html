@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBV NETWORKS</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #000, #222);
+      color: #fff;
+    }
+
+    h1, h2, h3, h4 {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      margin: 20px 0;
+    }
+
+    /* Password Section */
+    #password-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black url('https://i.imgur.com/6JQ7I1g.jpg') no-repeat center/cover;
+    }
+
+    #password {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #submit-password {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #submit-password:hover {
+      background-color: #d00000;
+    }
+
+    /* Main Content */
+    #main-content {
+      padding: 20px;
+    }
+
+    .section {
+      margin: 20px 0;
+    }
+
+    .subject-section {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #444;
+      border-radius: 8px;
+    }
+
+    .subject-section h3 {
+      color: #ffeb3b;
+    }
+
+    .subsection h4 {
+      margin-bottom: 5px;
+      color: #ddd;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+
+    ul li a {
+      color: #00c4ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    ul li a:hover {
+      color: #ffeb3b;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      animation: move-text 8s linear infinite;
+    }
+
+    @keyframes move-text {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    #contact-me {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    #contact-me:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Password Section -->
+  <div id="password-screen">
+    <h1>Enter Password to Access MBV NETWORKS</h1>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button id="submit-password">Submit</button>
+  </div>
+
+  <!-- Main Website -->
+  <div id="main-content" style="display: none;">
+    <!-- Title Section -->
+    <header>
+      <h1 class="title">MBV NETWORKS</h1>
+    </header>
+
+    <!-- Notes and Videos Section -->
+    <div class="section">
+      <h2>NOTES & VIDEOS</h2>
+
+      <!-- SCIENCE Section -->
+      <div class="subject-section">
+        <h3>SCIENCE</h3>
+        <div class="subsection">
+          <h4>Videos</h4>
+          <ul>
+            <li><a href="videos/video_2024-12-10_10-17-01.mp4" target="_blank">Chemistry Video</a></li>
+            <li><a href="videos/science/biology.mp4" target="_blank">Biology Video</a></li>
+            <li><a href="videos/science/physics.mp4" target="_blank">Physics Video</a></li>
+          </ul>
+        </div>
+        <div class="subsection">
+          <h4>Notes</h4>
+          <ul>
+            <li><a href="notes/science/chemistry.pdf" target="_blank">Chemistry Notes</a></li>
+            <li><a href="notes/science/biology.pdf" target="_blank">Biology Notes</a></li>
+            <li><a href="notes/science/physics.pdf" target="_blank">Physics Notes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Add similar sections for other subjects -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-text">&copy; MBV NETWORKS 2024-24</p>
+      <button id="contact-me">Contact Me</button>
+    </footer>
+  </div>
+
+  <script>
+    // Password Protection
+    document.getElementById("submit-password").addEventListener("click", function () {
+      const password = document.getElementById("password").value;
+      if (password === "MBV") {
+        document.getElementById("password-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        alert("Incorrect Password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
